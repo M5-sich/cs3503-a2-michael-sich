@@ -50,51 +50,55 @@ void div_convert(uint32_t n, int base, char *out){
 
 void sub_convert(uint32_t n, int base, char *out){
 
-	uint32_t arraySize = 2; // the array will always have at least one digit plus '\0'
-	int exponent = 0;
-	uint32_t power = 1;        
+    uint32_t arraySize = 2; // the array will always have at least one digit plus '\0'
+    int exponent = 0;
+    uint32_t power = 1;        
 
-	while (power * (uint32_t)base <= n) {
-			power *= (uint32_t)base;  
-			exponent++;               
-			arraySize++;        
-	}
+    // avoid overflow: use n / base instead of power * base
+    while ( (uint32_t)base != 0 && power <= n / (uint32_t)base ) {
+        power *= (uint32_t)base;  
+        exponent++;               
+        arraySize++;        
+    }
 
-	out[arraySize - 1] = '\0'; //leaving last index for '\0' since the output will ultimatly be a string
+    out[arraySize - 1] = '\0'; // leaving last index for '\0' since the output will ultimately be a string
 
-	while(exponent>=0){
-		
-		int number_of_factors = n/power;
+    while (exponent >= 0){
+        
+        int number_of_factors = 0;
+        while (n >= power){
+            n -= power;
+            number_of_factors++;
+        }
 
-		switch (number_of_factors){
-			case 10:
-				out[(arraySize-2)-exponent] = 'A';
-				break;
-			case 11:
-				out[(arraySize-2)-exponent] = 'B';
-				break;
-			case 12:
-				out[(arraySize-2)-exponent] = 'C';
-				break;
-			case 13:
-				out[(arraySize-2)-exponent] = 'D';
-				break;
-			case 14:
-				out[(arraySize-2)-exponent] = 'E';
-				break;
-			case 15:
-				out[(arraySize-2)-exponent] = 'F';
-				break;
-			default:
-				out[(arraySize-2)-exponent] = '0' + number_of_factors;  // in ascii if you start at 0 its 49 then add the remainder will give the correct correspoding letter
-				break;
-		}
+        switch (number_of_factors){
+            case 10:
+                out[(arraySize-2)-exponent] = 'A';
+                break;
+            case 11:
+                out[(arraySize-2)-exponent] = 'B';
+                break;
+            case 12:
+                out[(arraySize-2)-exponent] = 'C';
+                break;
+            case 13:
+                out[(arraySize-2)-exponent] = 'D';
+                break;
+            case 14:
+                out[(arraySize-2)-exponent] = 'E';
+                break;
+            case 15:
+                out[(arraySize-2)-exponent] = 'F';
+                break;
+            default:
+                out[(arraySize-2)-exponent] = '0' + number_of_factors;
+                break;
+        }
         
         if (exponent == 0) break;   
-        n %= power;
         power /= (uint32_t)base;
         exponent--;
-  }
+    }
 }
 
 
