@@ -1,0 +1,8 @@
+oct_to_hex 345 E5
+oct_to_hex 777 1FF
+oct_to_hex 100 40
+oct_to_hex 0 0
+oct_to_hex 1 1
+oct_to_hex 7 7
+oct_to_hex 1234 29C
+oct_to_hex 7654 FAC

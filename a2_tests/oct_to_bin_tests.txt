@@ -1,0 +1,9 @@
+oct_to_bin 725 111010101
+oct_to_bin 345 011100101
+oct_to_bin 777 111111111
+oct_to_bin 0 000
+oct_to_bin 1 001
+oct_to_bin 7 111
+oct_to_bin 10 001000
+oct_to_bin 100 001000000
+oct_to_bin 377 011111111
