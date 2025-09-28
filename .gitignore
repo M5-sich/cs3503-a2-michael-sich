@@ -1,0 +1,15 @@
+.DS_Store
+.DS_Store?
+
+*.o
+*.out
+*.exe
+*.dSYM/
+*.obj
+
+*.log
+*.tmp
+*.swp
+
+a1
+a2
