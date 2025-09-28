@@ -138,7 +138,18 @@ void oct_to_hex(const char *x, char *out){
         else if (b1=='1' && b2=='1' && b3=='1' && b4=='1') 
             out[num++] = 'F';
     }
-    out[num] = '\0'; // setting last index since this is a string 
+    // im checking cases where the number results in leading zeros. So instead of 004 you get 4
+    out[num] = '\0';
+    int start = 0;
+    while (out[start] == '0' && out[start + 1] != '\0') start++;
+    if (start > 0) {
+        int i = 0;
+        while (out[start + i] != '\0') { 
+            out[i] = out[start + i]; i++; 
+        }
+        out[i] = '\0'; //making sure the last one is the required char array ender
+    }
+    
 }
 
 void hex_to_bin(const char *hex, char out[]) {
