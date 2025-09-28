@@ -1,6 +1,8 @@
 # CS3503 Assignment 2
 
-# Assignment 2 – Number Representation Conversions
+# CS3503 Assignment 2
+
+**Assignment 2 – Number Representation Conversions**
 
 This project implements and tests **six conversion functions** related to number representations and base conversions.  
 It also includes a simple testing framework that reads test cases from files and reports pass/fail results.
@@ -23,17 +25,17 @@ The following functions are defined in `convert.c` and declared in `convert.h`:
 ## Project Structure
 
 cs3503-a2-michael-sich/
-├── main.c # Test driver
-├── convert.c # Function implementations
-├── convert.h # Function prototypes
-├── a2_tests/ # Test case files
+│── main.c # Test driver
+│── convert.c # Function implementations
+│── convert.h # Function prototypes
+│── a2_tests/ # Test case files
 │ ├── oct_to_bin_tests.txt
 │ ├── oct_to_hex_tests.txt
 │ ├── hex_to_bin_tests.txt
 │ ├── sign_magnitude_tests.txt
 │ ├── ones_complement_tests.txt
 │ └── twos_complement_tests.txt
-└── README.md # This file
+│── README.md # This file
 
 ---
 
@@ -46,33 +48,10 @@ cd ~/Desktop/"Computer Organization Arch/Assignment 2/cs3503-a2-michael-sich"
 ```
 
 Compile the program
-
 gcc main.c convert.c -o a2
-
-    •	main.c → test driver that loads test cases
-    •	convert.c → all six conversion functions
-    •	-o a2 → creates an executable named a2
+• main.c → test driver that loads test cases
+• convert.c → all six conversion functions
+• -o a2 → creates an executable named a2
 
 Run the program
 ./a2
-
-How the Tests Work
-• Each line in a test file has the format:
-function_name input expected_output
-
-Example (oct_to_bin_tests.txt):
-oct_to_bin 725 111010101
-oct_to_bin 345 011100101
-
-The program will parse each file in a2_tests/, run the function, and compare the result against the expected output.
-
-Assignment 2 Tests:
-
-[PASS] oct_to_bin (725) -> 111010101
-[PASS] oct_to_bin (345) -> 011100101
-[PASS] oct_to_bin (777) -> 111111111
-[FAIL] oct_to_hex (345) -> got E51, expected E5
-[PASS] hex_to_bin (A3) -> 10100011
-[PASS] to_twos_complement (-5) -> 11111111111111111111111111111011
-
-Summary: 59/60 tests passed
