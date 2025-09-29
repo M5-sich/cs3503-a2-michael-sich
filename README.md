@@ -87,9 +87,12 @@ Summary: 51/51 tests passed
 
 ## Transparency Note
 
-During development, the main challenge was implementing the `oct_to_hex` conversion.  
-At first, the function produced outputs with leading zeros (e.g., `0E5` instead of `E5`).  
-This was fixed by trimming unnecessary leading zeros while keeping valid single-digit results.
+While completing Assignment 2, I relied on external resources to strengthen my understanding:
 
-All other functions (`oct_to_bin`, `hex_to_bin`, `to_sign_magnitude`, `to_ones_complement`, `to_twos_complement`) passed their respective tests as expected.  
-The testing framework ensures that every case in the `a2_tests` folder is parsed and checked for correctness.
+- I used **W3Schools** to get a better grasp of file parsing in C.
+- I also used **AI assistance** to help me understand the logic of the code and how to organize it more clearly.
+
+I acknowledge that my current implementation may be inefficient and could have high cyclomatic complexity.  
+However, this approach was intentional — it allowed me to gain better clarity on the logic of number conversions, file parsing, and representation systems (such as sign magnitude, one’s complement, and two’s complement).
+
+Even though the solutions might not be optimized, they reflect my learning process and helped me understand conversions and representations at a deeper level.
