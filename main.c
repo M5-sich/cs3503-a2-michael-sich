@@ -105,8 +105,8 @@ int main() {
 
 
     if (failed == 0) {
-        return 0;  // success
+        return 0;  
     } else {
-        return 1;  // fail
+        return 1;  
     }
 }
