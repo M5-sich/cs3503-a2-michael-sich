@@ -95,4 +95,4 @@ While completing Assignment 2, I relied on external resources to strengthen my u
 I acknowledge that my current implementation may be inefficient and could have high cyclomatic complexity.  
 However, this approach was intentional — it allowed me to gain better clarity on the logic of number conversions, file parsing, and representation systems (such as sign magnitude, one’s complement, and two’s complement).
 
-Even though the solutions might not be optimized, they reflect my learning process and helped me understand conversions and representations at a deeper level.
+Even though the solutions might not be optimized, they helped me understand conversions and representations at a deeper level.
