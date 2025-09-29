@@ -80,7 +80,9 @@ When you run `./a2`, the program will:
 Assignment 2 Tests:
 
 [PASS] oct_to_bin (725) -> 111010101
+
 [PASS] oct_to_bin (345) -> 011100101
+
 [PASS] oct_to_bin (777) -> 111111111
 
 Summary: 51/51 tests passed
